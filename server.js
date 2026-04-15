@@ -1018,6 +1018,33 @@ app.delete("/api/admin/hero/:id", requireAuth, requirePermission("catalog.manage
   res.json({ ok: true });
 });
 
+// Fallback for HTML pages (for Vercel)
+app.get("*", (req, res) => {
+  const path = req.path;
+  if (path.startsWith("/api/")) {
+    return res.status(404).json({ error: "api_not_found" });
+  }
+
+  // Try to serve HTML files
+  const htmlFiles = ["index.html", "auth.html", "cart.html", "category.html", "product.html", "admin.html", "review.html", "track.html", "terms.html"];
+  const fileName = path === "/" ? "index.html" : path.slice(1);
+
+  if (htmlFiles.includes(fileName)) {
+    res.sendFile(path.join(__dirname, fileName), (err) => {
+      if (err) {
+        res.status(404).send("Page not found");
+      }
+    });
+  } else {
+    // Default to index.html for SPA routes
+    res.sendFile(path.join(__dirname, "index.html"), (err) => {
+      if (err) {
+        res.status(404).send("Page not found");
+      }
+    });
+  }
+});
+
 const start = async () => {
   await ensureDataFiles();
   if (process.env.VERCEL || process.env.NODE_ENV === "production") {
