@@ -1,0 +1,145 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="title.auth">FRIENDS | تسجيل الدخول وإنشاء حساب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth-search.css" />
+</head>
+<body data-page="auth">
+  <div class="announcement">
+    <div class="container">
+      <div><strong data-i18n="auth.announcement_title">حسابك</strong> <span data-i18n="auth.announcement_subtitle">أنشئ حسابًا جديدًا أو سجّل الدخول.</span></div>
+      <div>FRIENDS</div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="images/uploads/photo_5911288941644549363_y.png" alt="Friends Logo" />
+        </div>
+        <div class="brand-text">
+          <h1>FRIENDS</h1>
+          <p data-i18n="brand.tagline">Friend For Medical Supplies</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a class="nav-link" href="index.html"><span class="nav-icon">⌂</span><span data-i18n="nav.home">الرئيسية</span></a>
+        <a class="nav-link" href="track.html"><span class="nav-icon">◎</span><span data-i18n="nav.track">تتبع الطلب</span></a>
+        <a class="nav-link" href="cart.html"><span class="nav-icon">🛒</span><span data-i18n="nav.cart">السلة</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="auth-layout">
+          <div class="card auth-card" id="loginBox">
+            <h3 data-i18n="auth.login_title">تسجيل الدخول</h3>
+            <label class="input-label" data-i18n="auth.login_hint">يمكنك استخدام البريد أو رقم الهاتف</label>
+            <input id="loginEmail" type="text" placeholder="user@mail.com أو 010xxxxxxxx" data-i18n-placeholder="auth.login_placeholder" autocomplete="username" />
+            <div id="loginPhoneSection" style="display:none;">
+              <button class="btn ghost" id="sendLoginPhoneCode" data-i18n="auth.send_code">أرسل رمز التعبئة</button>
+              <label class="input-label" data-i18n="auth.code_label">أدخل الرمز</label>
+              <input id="loginPhoneCode" type="text" placeholder="000000" data-i18n-placeholder="auth.code_placeholder" maxlength="6" inputmode="numeric" autocomplete="one-time-code" />
+            </div>
+            <label class="input-label" id="loginPasswordLabel" data-i18n="auth.password_label">كلمة المرور</label>
+            <input id="loginPassword" type="password" placeholder="******" data-i18n-placeholder="auth.password_placeholder" autocomplete="current-password" />
+            <button class="btn primary" id="loginBtn" data-i18n="action.login">تسجيل الدخول</button>
+            <p class="note" id="loginMsg" role="status" aria-live="polite"></p>
+          <div class="social-login">
+            <button class="btn ghost" id="googleLogin" data-i18n="auth.login_google">دخول بـ Google</button>
+            <button class="btn ghost" id="facebookLogin" data-i18n="auth.login_facebook">دخول بـ Facebook</button>
+            <button class="btn ghost" id="appleLogin" data-i18n="auth.apple_login">دخول بـ Apple</button>
+          </div>
+          <p class="note" data-i18n="auth.apple_hint_login">استخدم Apple لتسجيل أسرع.</p>
+          </div>
+
+          <div class="card auth-card" id="registerBox">
+            <h3 data-i18n="auth.register_title">إنشاء حساب جديد</h3>
+            <label class="input-label" data-i18n="auth.full_name_label">الاسم الثلاثي الحقيقي (بدون اختصارات)</label>
+            <input id="registerName" type="text" placeholder="مثال: أحمد محمد علي" data-i18n-placeholder="auth.full_name_placeholder" autocomplete="name" />
+            <label class="input-label" data-i18n="auth.address_label">العنوان التفصيلي</label>
+            <textarea id="registerAddress" rows="3" placeholder="المحافظة، المدينة، الحي، الشارع، رقم المبنى/الدور/الشقة" data-i18n-placeholder="auth.address_placeholder" autocomplete="street-address"></textarea>
+            <label class="input-label" data-i18n="auth.country_label">الدولة</label>
+            <select id="registerCountry" class="select-input" autocomplete="country-name">
+              <option value="" data-i18n="auth.country_select">اختر الدولة</option>
+            </select>
+            <label class="input-label" data-i18n="auth.alt_phone_label">رقم إضافي للتواصل</label>
+            <input id="registerAltPhone" type="tel" inputmode="tel" placeholder="01xxxxxxxxx" data-i18n-placeholder="auth.alt_phone_placeholder" autocomplete="tel" />
+            <label class="input-label" data-i18n="auth.email_or_phone_label">البريد الإلكتروني أو رقم الهاتف</label>
+            <input id="registerEmail" type="text" placeholder="user@mail.com أو 010xxxxxxxx" data-i18n-placeholder="auth.email_or_phone_placeholder" autocomplete="email" />
+            <div id="registerPhoneSection" style="display:none;">
+              <button class="btn ghost" id="sendRegisterPhoneCode" data-i18n="auth.send_code">أرسل رمز التعبئة</button>
+              <label class="input-label" data-i18n="auth.code_label">أدخل الرمز</label>
+              <input id="registerPhoneCode" type="text" placeholder="000000" data-i18n-placeholder="auth.code_placeholder" maxlength="6" inputmode="numeric" autocomplete="one-time-code" />
+            </div>
+            <label class="input-label" id="registerPasswordLabel" data-i18n="auth.password_label">كلمة المرور</label>
+            <input id="registerPassword" type="password" placeholder="6 أحرف أو أكثر" data-i18n-placeholder="auth.password_hint" autocomplete="new-password" />
+            <div class="terms-box">
+              <div class="terms-header">
+                <h4 data-i18n="terms.title_short">الشروط والأحكام وسياسة الاسترجاع</h4>
+                <a class="terms-link" href="terms.html" target="_blank" rel="noopener" data-i18n="terms.read_more">قراءة كاملة</a>
+              </div>
+              <ul class="terms-list">
+                <li data-i18n="terms.point1">حقوق الملكية الفكرية والمالية للشركة محفوظة بالكامل.</li>
+                <li data-i18n="terms.point2">تكلفة الشحن على العميل في حالة إرجاع المنتج. في حالة عدم وجود سبب فني في المنتج</li>
+                <li data-i18n="terms.point3">يُقبل المرتجع فقط إذا كان المنتج بنفس حالته وقت التسليم.</li>
+              </ul>
+              <label class="terms-consent">
+                <input type="checkbox" id="termsAgree" />
+                <span data-i18n="terms.accept">أوافق على الشروط والأحكام وسياسة الاسترجاع.</span>
+              </label>
+            </div>
+            <button class="btn primary" id="registerBtn" data-i18n="action.register">إنشاء الحساب</button>
+            <p class="note" id="registerMsg" role="status" aria-live="polite"></p>
+          <div class="social-login">
+            <button class="btn ghost" id="googleRegister" data-i18n="auth.register_google">سجل بـ Google</button>
+            <button class="btn ghost" id="facebookRegister" data-i18n="auth.register_facebook">سجل بـ Facebook</button>
+            <button class="btn ghost" id="appleRegister" data-i18n="auth.register_apple">سجل بـ Apple</button>
+          </div>
+          <p class="note" data-i18n="auth.apple_hint_register">استخدم Apple لإنشاء حساب أسرع.</p>
+          </div>
+
+          <!-- profile view shown when already logged in -->
+          <div class="card auth-card" id="profileBox" style="display:none;">
+            <h3 data-i18n="auth.profile_title">حسابي</h3>
+            <p><strong data-i18n="auth.profile_name">الاسم:</strong> <span id="profileName"></span></p>
+            <p><strong data-i18n="auth.profile_contact">البريد/الهاتف:</strong> <span id="profileContact"></span></p>
+            <p><button class="btn ghost" id="logoutBtn" data-i18n="action.logout">تسجيل الخروج</button></p>
+            <div id="myOrdersContainer">
+              <h4 data-i18n="auth.my_orders">طلباتي السابقة</h4>
+              <ul id="myOrdersList"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="mobile-tabs" aria-label="Mobile Navigation">
+    <a class="mobile-tab" href="index.html"><span>⌂</span><small data-i18n="nav.home">الرئيسية</small></a>
+    <a class="mobile-tab" href="track.html"><span>◎</span><small data-i18n="nav.track">تتبع</small></a>
+    <a class="mobile-tab active" href="auth.html"><span>◉</span><small data-i18n="nav.account">حسابي</small></a>
+  </nav>
+
+  <!-- Firebase SDKs for authentication -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <div id="recaptcha-container" style="visibility:hidden;position:absolute;top:0;left:0;"></div>
+  <script src="js/i18n.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
+
+
+

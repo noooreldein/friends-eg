@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="title.review">FRIENDS | مشاركة تقييماتك</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="review">
+  <div class="announcement">
+    <div class="container">
+      <div><strong data-i18n="review.announcement_title">شارك تقييمك</strong> <span data-i18n="review.announcement_subtitle">وساعد عملاء آخرين على الاختيار.</span></div>
+      <div>FRIENDS</div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="images/logo-pharmaplast2.png" alt="Friends Logo" />
+        </div>
+        <div class="brand-text">
+          <h1>FRIENDS</h1>
+          <p data-i18n="brand.tagline">Friend For Medical Supplies</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a class="nav-link" href="index.html"><span class="nav-icon">⌂</span><span data-i18n="nav.home">الرئيسية</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="review.title">تقييم الطلب</h2>
+          <p id="reviewOrderInfo" data-i18n="review.loading_order">جارٍ تحميل بيانات الطلب...</p>
+        </div>
+
+        <div class="card" id="reviewCard" style="display:none;">
+          <label class="input-label" data-i18n="review.received_label">هل استلمت الطلب؟</label>
+          <select id="receivedConfirmed" class="select-input">
+            <option value="yes" data-i18n="review.received_yes">تم الاستلام بنجاح</option>
+            <option value="no" data-i18n="review.received_no">لا</option>
+          </select>
+
+          <label class="input-label" data-i18n="review.courier_rating_label">تقييم المندوب (اختياري)</label>
+          <select id="courierRating" class="select-input">
+            <option value="" data-i18n="review.choose_rating">اختر التقييم</option>
+            <option value="5" data-i18n="review.stars_5">5 نجوم</option>
+            <option value="4" data-i18n="review.stars_4">4 نجوم</option>
+            <option value="3" data-i18n="review.stars_3">3 نجوم</option>
+            <option value="2" data-i18n="review.stars_2">2 نجوم</option>
+            <option value="1" data-i18n="review.stars_1">1 نجمة</option>
+          </select>
+
+          <label class="input-label" data-i18n="review.courier_comment_label">ملاحظات عن المندوب أو التوصيل</label>
+          <input id="courierComment" type="text" placeholder="اكتب ملاحظتك" data-i18n-placeholder="review.courier_comment_placeholder" />
+
+          <h4 data-i18n="review.products_title">تقييم المنتجات (اختياري)</h4>
+          <div id="reviewProducts"></div>
+
+          <button class="btn primary" id="submitReviewBtn" data-i18n="action.submit_review">إرسال التقييم</button>
+          <p class="note" id="reviewMsg"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/review.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
+
+
+

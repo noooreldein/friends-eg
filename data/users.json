@@ -1,0 +1,37 @@
+[
+  {
+    "id": "f90c4e68-39a7-4863-8061-12eac1e32c57",
+    "name": "Admin",
+    "email": "admin@friends.local",
+    "passwordHash": "$2a$10$eLzYhIz6jwxc5uS/vfhZ0umyC6Tn5QrLbaccC9rURiKSsBAeJ/LiC",
+    "role": "supervisor"
+  },
+  {
+    "id": "887b0c1f-bcdf-407b-8720-50a84be3ec79",
+    "name": "Shipping",
+    "email": "shipping@friends.local",
+    "passwordHash": "$2a$10$V4Pgo9z0mLiYAoOSGQj/w.cwLoWAoM.Yb/kwjalfaVbLNXZ7k15ke",
+    "role": "shipping"
+  },
+  {
+    "id": "54cfc94e-75c9-4a0a-bdd4-cb306427aea8",
+    "name": "Support",
+    "email": "support@friends.local",
+    "passwordHash": "$2a$10$V4Pgo9z0mLiYAoOSGQj/w.cwLoWAoM.Yb/kwjalfaVbLNXZ7k15ke",
+    "role": "support"
+  },
+  {
+    "id": "eca81f28-8df9-4ff2-9b34-4b7f237bd2b4",
+    "name": "noor",
+    "email": "nooreldein401@gmail.com",
+    "passwordHash": "$2a$10$nKKNq93twp3Ig7RuckTvPOsQU4VHsdHkfsH4u2gr34av4HZSv/KJu",
+    "role": "user"
+  },
+  {
+    "id": "c4bbd0f4-88c1-4c63-9fa5-a0d4550c788e",
+    "name": "noor",
+    "email": "nooreldein401+1@gmail.com",
+    "passwordHash": "$2a$10$9IhouZHtnWHdKa9XyKp36uIXOy4L2ud/bzxKhJGhO2swaHy9ry9Iq",
+    "role": "user"
+  }
+]

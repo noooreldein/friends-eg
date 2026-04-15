@@ -1,0 +1,73 @@
+[
+  {
+    "id": "f89a15c1-5e30-44bd-94a5-55519798517f",
+    "createdAt": "2026-03-22T14:56:52.587Z",
+    "updatedAt": "2026-03-23T16:14:43.751Z",
+    "status": "cancelled",
+    "statusHistory": [
+      {
+        "status": "pending",
+        "label": "قيد المراجعة",
+        "at": "2026-03-22T14:56:52.587Z",
+        "note": "تم استلام الطلب."
+      },
+      {
+        "status": "confirmed",
+        "label": "تم التأكيد",
+        "at": "2026-03-22T16:58:36.419Z",
+        "note": "تم تحديث الحالة إلى تم التأكيد"
+      },
+      {
+        "status": "cancelled",
+        "label": "تم الإلغاء",
+        "at": "2026-03-23T16:14:37.673Z",
+        "note": "تم تحديث الحالة إلى تم الإلغاء"
+      },
+      {
+        "status": "cancelled",
+        "label": "تم الإلغاء",
+        "at": "2026-03-23T16:14:43.751Z",
+        "note": "تم تحديث الحالة إلى تم الإلغاء"
+      }
+    ],
+    "adminAccessToken": "cbee81c6-2f58-4dbb-b941-d9d497ac06dc",
+    "reviewToken": null,
+    "reviewTokenUsed": false,
+    "items": [
+      {
+        "id": 1,
+        "name": "rrrrr",
+        "price": 2333,
+        "qty": 7,
+        "sku": "vbb"
+      }
+    ],
+    "discountCode": "kolk",
+    "customer": {
+      "name": "noor eldein",
+      "phone": "01094708407",
+      "address": ",d,mc",
+      "notes": "dd",
+      "email": "admin@friends.local"
+    },
+    "payment": {
+      "method": "wallet",
+      "provider": "Vodafone Cash",
+      "transferTo": "010xxxxxxxxx",
+      "transferAccount": "Vodafone Wallet - FRIENDS",
+      "transferProofImage": "images/uploads/1774191412538-f9542280-9bc2-4b1a-9e33-9dc15a5fc7c0.jpg",
+      "transferRef": "lllll"
+    },
+    "totals": {
+      "subtotal": 16331,
+      "shipping": 0,
+      "discount": 0,
+      "total": 16331
+    },
+    "lastNotification": {
+      "channel": "whatsapp",
+      "message": "مرحبًا noor eldein، طلبك رقم f89a15c1 حالته الآن: تم الإلغاء.",
+      "sentAt": "2026-03-23T16:14:43.751Z"
+    }
+  }
+]
