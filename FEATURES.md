@@ -236,7 +236,7 @@ Response: [ { id, status, items, totals, ... } ]
 
 للمزيد من المساعدة:
 - البريد: support@friends.store
-- واتساب: 01094708407
+- واتساب: +201094708407
 
 ---
 

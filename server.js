@@ -7,6 +7,10 @@ import { fileURLToPath } from "url";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import multer from "multer";
+import dotenv from "dotenv";
+
+// Load environment variables
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,7 +27,7 @@ const USERS_PATH = path.join(DATA_DIR, "users.json");
 const REVIEWS_PATH = path.join(DATA_DIR, "reviews.json");
 const UPLOAD_DIR = path.join(__dirname, "images", "uploads");
 
-const JWT_SECRET = process.env.JWT_SECRET || "friends_dev_secret_change_me";
+const JWT_SECRET = process.env.JWT_SECRET || "friends_production_secret_key_change_in_env_file_2024";
 const TOKEN_EXPIRES = "7d";
 
 const discountCodes = {
@@ -211,7 +215,14 @@ const normalizeOrder = (order) => ({
   adminAccessToken: order.adminAccessToken || uuidv4()
 });
 
-app.use(cors());
+// CORS Configuration
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : '*',
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json({ limit: "10mb" }));
 app.use(express.static(__dirname));
 
@@ -1010,7 +1021,7 @@ app.delete("/api/admin/hero/:id", requireAuth, requirePermission("catalog.manage
 const start = async () => {
   await ensureDataFiles();
   app.listen(PORT, () => {
-    console.log(`FRIENDS backend running on http://localhost:${PORT}`);
+    console.log(`FRIENDS backend running on PORT ${PORT}`);
   });
 };
 

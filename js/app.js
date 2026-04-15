@@ -3,7 +3,7 @@
   كل البيانات والوظائف هنا لتسهيل التعديل والإضافة.
 */
 
-const API_BASE = "http://localhost:3000/api";
+const API_BASE = `${window.location.origin}/api`;
 let authUser = null;
 let products = [];
 let currentCategory = "";
@@ -638,7 +638,7 @@ const paymentChannels = {
 };
 
 let transferProofFile = null;
-const ADMIN_WHATSAPP = "201094708407";
+const ADMIN_WHATSAPP = "=201094708407";
 
 function getDiscountRate() {
   const input = document.getElementById("discountCode");

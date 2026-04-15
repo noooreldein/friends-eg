@@ -1,4 +1,4 @@
-﻿const API_BASE = "http://localhost:3000/api";
+﻿const API_BASE = `${window.location.origin}/api`;
 const t = (key, fallback = "") => (window.t ? window.t(key, fallback) : (fallback || key));
 const params = new URLSearchParams(window.location.search);
 const token = params.get("token") || "";

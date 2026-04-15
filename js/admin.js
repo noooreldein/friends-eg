@@ -1,4 +1,4 @@
-﻿const API_BASE = "http://localhost:3000/api";
+﻿const API_BASE = `${window.location.origin}/api`;
 let token = localStorage.getItem("friends_admin_token") || localStorage.getItem("friends_user_token") || "";
 let me = null;
 let imageDataList = [];
