@@ -1020,9 +1020,18 @@ app.delete("/api/admin/hero/:id", requireAuth, requirePermission("catalog.manage
 
 const start = async () => {
   await ensureDataFiles();
-  app.listen(PORT, () => {
-    console.log(`FRIENDS backend running on PORT ${PORT}`);
-  });
+  if (process.env.VERCEL || process.env.NODE_ENV === "production") {
+    // Vercel serverless - don't listen
+    console.log(`FRIENDS backend ready on PORT ${PORT}`);
+  } else {
+    // Local development
+    app.listen(PORT, () => {
+      console.log(`FRIENDS backend running on http://localhost:${PORT}`);
+    });
+  }
 };
 
 start();
+
+// Export for Vercel
+export default app;
